@@ -202,6 +202,12 @@ def xloader_data_into_datastore_(input, job_dict, logger):
             resource_id=resource['id'],
             mimetype=resource.get('format'),
             logger=logger)
+        print("=====================================================")
+        print('Loading with direct_load the following file:')
+        print("=====================================================")
+        print(tmp_file.name)
+        print("=====================================================")
+        logger.info('Loading with direct_load the file: %s', tmp_file.name)
         loader.calculate_record_count(
             resource_id=resource['id'], logger=logger)
         set_datastore_active(data, resource, logger)
@@ -221,11 +227,11 @@ def xloader_data_into_datastore_(input, job_dict, logger):
 
     def tabulator_load():
         print("=====================================================")
-        print('Loading with tabulator the following file:')
+        print('Loading with tabulator_load the following file:')
         print("=====================================================")
         print(tmp_file.name)
         print("=====================================================")
-        logger.info('Loading with tabulator the file: %s', tmp_file.name)
+        logger.info('Loading with tabulator_load the file: %s', tmp_file.name)
         try:
             loader.load_table(tmp_file.name,
                               resource_id=resource['id'],
