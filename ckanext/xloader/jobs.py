@@ -220,6 +220,11 @@ def xloader_data_into_datastore_(input, job_dict, logger):
         logger.info('File Hash updated for resource: %s', resource['hash'])
 
     def tabulator_load():
+        print("=====================================================")
+        print('Loading with tabulator the following file:')
+        print("=====================================================")
+        print(tmp_file.name)
+        print("=====================================================")
         try:
             loader.load_table(tmp_file.name,
                               resource_id=resource['id'],
