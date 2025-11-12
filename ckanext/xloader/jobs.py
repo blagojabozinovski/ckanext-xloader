@@ -225,6 +225,7 @@ def xloader_data_into_datastore_(input, job_dict, logger):
         print("=====================================================")
         print(tmp_file.name)
         print("=====================================================")
+        logger.info('Loading with tabulator the file: %s', tmp_file.name)
         try:
             loader.load_table(tmp_file.name,
                               resource_id=resource['id'],
